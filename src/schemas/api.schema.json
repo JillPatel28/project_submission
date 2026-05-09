@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "API Schema",
+  "description": "REST API configuration: endpoints, methods, and validation rules",
+  "type": "object",
+  "properties": {
+    "basePath": { "type": "string" },
+    "version": { "type": "string" },
+    "endpoints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "path": { "type": "string" },
+          "method": { "type": "string", "enum": ["GET", "POST", "PUT", "PATCH", "DELETE"] },
+          "requestBody": {},
+          "response": { "type": "object" },
+          "auth": { "type": "boolean" }
+        },
+        "required": ["path", "method"]
+      },
+      "minItems": 1
+    }
+  },
+  "required": ["endpoints"]
+}

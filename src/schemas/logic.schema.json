@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Business Logic Schema",
+  "description": "Business rules, gating, constraints, and workflow definitions",
+  "type": "object",
+  "properties": {
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "trigger": { "type": "string" },
+          "condition": { "type": "string" },
+          "action": { "type": "string" },
+          "priority": { "type": "number" }
+        },
+        "required": ["name", "trigger", "condition", "action"]
+      },
+      "minItems": 1
+    },
+    "workflows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "steps": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["name", "steps"]
+      }
+    }
+  },
+  "required": ["rules"]
+}

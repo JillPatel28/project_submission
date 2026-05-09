@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Intent Schema",
+  "description": "Structured intermediate representation of parsed user intent",
+  "type": "object",
+  "properties": {
+    "appName": { "type": "string", "minLength": 1 },
+    "appType": { "type": "string", "enum": ["fullstack", "api", "dashboard", "mobile", "saas"] },
+    "description": { "type": "string", "minLength": 10 },
+    "features": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "entities": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "userRoles": {
+      "type": "array",
+      "items": { "type": "string" },
+      "minItems": 1
+    },
+    "constraints": { "type": "object" }
+  },
+  "required": ["appName", "appType", "description", "features", "entities", "userRoles"]
+}

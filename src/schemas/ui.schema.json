@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "UI Schema",
+  "description": "UI configuration: pages, components, and layout definitions",
+  "type": "object",
+  "properties": {
+    "appName": { "type": "string" },
+    "theme": { "type": "string" },
+    "layout": { "type": "string" },
+    "pages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "route": { "type": "string" },
+          "components": { "type": "array", "items": { "type": "object" } },
+          "requiresAuth": { "type": "boolean" }
+        },
+        "required": ["name", "route", "components"]
+      },
+      "minItems": 1
+    }
+  },
+  "required": ["pages"]
+}

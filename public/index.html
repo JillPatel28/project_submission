@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI App Compiler — Multi-Stage Generation Pipeline</title>
+  <meta name="description" content="Compiler-style AI system that converts natural language into validated, executable application configurations.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+</head>
+<body>
+  <div class="aurora"></div>
+  <div class="grid-overlay"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <div class="logo-icon">⚡</div>
+        <div class="logo-text">AI App Compiler <span>v2.0</span></div>
+      </div>
+      <div class="header-badge">
+        <span class="dot"></span>
+        <span id="mode-label">System Ready</span>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+      <h1>Compile Apps from<br>Natural Language</h1>
+      <p>Describe your application in plain English. Our multi-stage compiler pipeline generates validated, executable configurations — UI, API, DB, Auth & Business Logic.</p>
+    </section>
+
+    <!-- Prompt Input -->
+    <div class="prompt-container">
+      <div class="prompt-box">
+        <textarea class="prompt-input" id="prompt-input" placeholder="Build a CRM with login, contacts, dashboard, role-based access, and premium plan with payments. Admins can see analytics." rows="2"></textarea>
+        <button class="compile-btn" id="compile-btn">Compile →</button>
+      </div>
+    </div>
+
+    <!-- Pipeline Visualizer -->
+    <div class="pipeline-viz" id="pipeline-viz">
+      <div class="stage-node" data-stage="0">📋 Input Analysis</div>
+      <span class="stage-arrow">→</span>
+      <div class="stage-node" data-stage="1">🎯 Intent</div>
+      <span class="stage-arrow">→</span>
+      <div class="stage-node" data-stage="2">🏗️ Design</div>
+      <span class="stage-arrow">→</span>
+      <div class="stage-node" data-stage="3">⚙️ Codegen</div>
+      <span class="stage-arrow">→</span>
+      <div class="stage-node" data-stage="4">🔗 Refinement</div>
+      <span class="stage-arrow">→</span>
+      <div class="stage-node" data-stage="5">🚀 Execution</div>
+    </div>
+
+    <!-- Results Section -->
+    <div class="results-section" id="results-section">
+      <!-- Metrics Strip -->
+      <div class="metrics-strip" id="metrics-strip">
+        <div class="metric-card"><div class="metric-icon">⏱️</div><div class="metric-value" id="m-latency">—</div><div class="metric-label">Latency</div></div>
+        <div class="metric-card"><div class="metric-icon">🔢</div><div class="metric-value" id="m-tokens">—</div><div class="metric-label">Tokens</div></div>
+        <div class="metric-card"><div class="metric-icon">💰</div><div class="metric-value" id="m-cost">—</div><div class="metric-label">Est. Cost</div></div>
+        <div class="metric-card"><div class="metric-icon">🎯</div><div class="metric-value" id="m-quality">—</div><div class="metric-label">Quality</div></div>
+        <div class="metric-card"><div class="metric-icon">🔗</div><div class="metric-value" id="m-consistency">—</div><div class="metric-label">Consistency</div></div>
+        <div class="metric-card"><div class="metric-icon">🚀</div><div class="metric-value" id="m-executable">—</div><div class="metric-label">Exec Ready</div></div>
+        <div class="metric-card"><div class="metric-icon">🔧</div><div class="metric-value" id="m-repairs">—</div><div class="metric-label">Repairs</div></div>
+      </div>
+
+      <!-- Assumptions -->
+      <div class="assumptions-panel" id="assumptions-panel">
+        <div class="assumptions-title">📝 Documented Assumptions</div>
+        <div id="assumptions-list"></div>
+      </div>
+
+      <!-- Schema Tabs -->
+      <div class="tabs" id="schema-tabs">
+        <button class="tab active" data-layer="ui">UI Config</button>
+        <button class="tab" data-layer="api">API Config</button>
+        <button class="tab" data-layer="db">DB Schema</button>
+        <button class="tab" data-layer="auth">Auth Rules</button>
+        <button class="tab" data-layer="logic">Business Logic</button>
+        <button class="tab" data-layer="design">Architecture</button>
+        <button class="tab" data-layer="full">Full Output</button>
+      </div>
+
+      <!-- Schema Panel -->
+      <div class="schema-panel" id="schema-panel">
+        <div class="schema-header">
+          <div class="schema-title" id="schema-title">UI Config</div>
+          <span class="schema-badge valid" id="schema-badge">✓ Valid</span>
+        </div>
+        <div class="schema-content">
+          <pre id="schema-output"></pre>
+        </div>
+      </div>
+
+      <!-- Architecture Cards -->
+      <div class="arch-grid" id="arch-grid"></div>
+
+      <!-- Pipeline Trace -->
+      <div class="trace-terminal">
+        <div class="trace-header">
+          <div class="trace-dots"><span></span><span></span><span></span></div>
+          <div class="trace-title">Pipeline Trace</div>
+        </div>
+        <div class="trace-body" id="trace-body"></div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      AI Application Compiler &mdash; Multi-Stage Generation Pipeline &mdash; System Thinking × Reliability × Execution Awareness
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

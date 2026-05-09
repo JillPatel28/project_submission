@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "System Design Schema",
+  "description": "Application architecture: entities, flows, and role definitions",
+  "type": "object",
+  "properties": {
+    "entities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "fields": { "type": "array", "items": { "type": "object" } },
+          "relationships": { "type": "array", "items": { "type": "object" } }
+        },
+        "required": ["name", "fields"]
+      },
+      "minItems": 1
+    },
+    "flows": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "steps": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["name", "steps"]
+      }
+    },
+    "roles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "permissions": { "type": "array", "items": { "type": "string" } }
+        },
+        "required": ["name", "permissions"]
+      }
+    }
+  },
+  "required": ["entities", "flows", "roles"]
+}
