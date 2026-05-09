@@ -4,8 +4,8 @@
   "description": "Compiler-style AI application generator: Natural Language → Structured Config → Validated → Executable",
   "type": "module",
   "scripts": {
-    "start": "node src/index.js",
-    "start:web": "node src/server.js",
+    "start": "node src/server.js",
+    "start:cli": "node src/index.js",
     "evaluate": "node src/evaluate.js",
     "test": "node src/tests/test.js"
   },
