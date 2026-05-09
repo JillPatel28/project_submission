@@ -60,4 +60,9 @@ const startServer = (port) => {
   });
 };
 
-startServer(CONFIG.server.port);
+// Start server locally, but export for Vercel Serverless
+if (process.env.NODE_ENV !== 'production') {
+  startServer(CONFIG.server.port);
+}
+
+export default app;
